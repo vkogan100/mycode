@@ -1,0 +1,16 @@
+apiVersion: v1 # the api version to use
+kind: Pod # example Deployment / Pod
+metadata:
+  name: webservice01
+  labels:
+    name: webservice01 # a metadata label name(s)
+spec:
+  containers:
+  -
+    name: webby # name of container
+    image: reg.alta3.com/888-sam-webby # name of the image to use
+    ports:
+     -
+       name: web # name for port mapping
+       containerPort: 8888 # we mapped this with the port-forward command
+       protocol: TCP # TCP or UDP

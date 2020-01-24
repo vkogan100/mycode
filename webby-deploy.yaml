@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: vitalservice
+   labels:
+     app: test01
+spec:
+  selector:
+    matchLabels:
+      app: webby
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: webby
+    spec:
+      containers:
+      - name: service01
+        image: reg.alta3.com/888-sam-webby   # Or use your own webby image!
+        ports:
+        - containerPort: 80  
